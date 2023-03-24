@@ -1,0 +1,8 @@
+#recipe-card>div{
+    /* border: 1px solid; */
+    display: grid;
+    justify-content: flex-start;
+}
+#recipe-card>div>img{
+    width: 60%;
+}
