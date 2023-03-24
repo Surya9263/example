@@ -8,3 +8,31 @@
 .catCard{
     border: 1px solid;
 }
+
+
+#searchBox{
+    width: 50%;
+    margin: auto;
+}
+
+#searchBox>input{
+    padding: 15px 25px;
+    width: 62%;
+}
+
+#searched-items>div{
+    display: flex;
+    justify-content: space-around                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 70%;
+}
+
+#searched-items>div>img{
+    width: 150px;
+}
+
+#searched-items>div>h3:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

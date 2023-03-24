@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./styles/index.css" />
   </head>
   <body onload="showCategories()">
+    <div id="searchBox">
+      <input oninput="debounce(getMealByQuery,1000)"  id="search"  type="text" placeholder="search your meal here...">
+      <div id="searched-items"></div>
+    </div>
     <h1 style="text-align: center;">All Categories</h1>
     <div id="category-card">
     </div>
