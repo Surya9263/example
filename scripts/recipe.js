@@ -34,20 +34,31 @@ function recipeData(){
 
             let table=document.createElement("table")
             let thead=document.createElement("thead")
+            let tr=document.createElement("tr")
+            let th1=document.createElement("th")
+            th1.innerText="Ingredients"
+            let th2=document.createElement("th")
+            th2.innerText="Quantity"
+            tr.append(th1,th2)
+            thead.append(tr)
             let tbody=document.createElement("tbody")
             for(let i=1;i<=20;i++){
-                let tr=document.createElement("tr")
-                let td1=document.createElement("td")
-                let td2=document.createElement("td")
-                if(`e.strIngredient${i}`){
-                    td1.innerText=`e.strIngredient${i}`
-                    td2.innerText=`e.strMeasure${i}`
+                let ing=`strIngredient${i}`
+                let qty=`strMeasure${i}`
+                if(e[ing]){
+                    let tr=document.createElement("tr")
+                    let td1=document.createElement("td")
+                    let td2=document.createElement("td")
+                    console.log(e[ing]);
+                    td1.innerText=e[ing]
+                    td2.innerText=e[qty]
+                    tr.append(td1,td2)
+                    tbody.append(tr)
                 }
-                tr.append(td1,td2)
-                tbody.append(tr)
             }
+            table.append(thead)
             table.append(tbody)
-            div.append(img,h2,h4,origin,ingr,p2,table)
+            div.append(img,h2,h4,origin,p2,table)
             document.getElementById("recipe-card").append(div)
         })
     })
