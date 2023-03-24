@@ -11,3 +11,7 @@
 #items-card>div>img{
     width: 100%;
 }
+
+button{
+    cursor: pointer;
+}

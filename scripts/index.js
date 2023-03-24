@@ -61,9 +61,11 @@ async function getMealByQuery(){
 }
 
 
+
 let id;
 
 function debounce(func,delay){
+    
     if(id){
         clearTimeout(id)
     }
