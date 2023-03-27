@@ -1,6 +1,5 @@
 
 let user=JSON.parse(localStorage.getItem("currentUser"))
-console.log(user);
 
 async function getCategories(){
     const res=await fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
@@ -11,7 +10,7 @@ async function getCategories(){
 function showCategories(){
 
     if(user){
-        document.getElementById("user").innerText=user.name.toUpperCase()
+        document.getElementById("user").innerText=`${user.name.toUpperCase()}`
         document.getElementById("signup").hidden=true
         document.getElementById("login").innerText="LOGOUT"
         document.getElementById("login").addEventListener("click",function(){
@@ -22,7 +21,6 @@ function showCategories(){
     document.getElementById("searched-items").style.height="0px"
     document.getElementById("searched-items").style.border="none"
 
-    handleNavbar()
 
     getCategories()
     .then(res=>{
@@ -47,23 +45,14 @@ function showCategories(){
     })
 }
 
-
-function handleNavbar(){
-    let navbar=document.querySelector("#navbar").innerHTML[1]
-    console.log(navbar);
-}
-
 async function getMealByQuery(){
     let query=document.getElementById("search").value
-    console.log("query",query);
     const res=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
     const data=await res.json()
-    console.log(data.meals);
     
     document.getElementById("searched-items").style.height="500px"
 
     if(!query){
-        console.log("in");
         document.getElementById("searched-items").style.height="0px"
         document.getElementById("searched-items").innerHTML=null
         return

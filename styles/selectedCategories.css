@@ -33,6 +33,10 @@ a{
     padding: 10px;
   }
 
+  #items-card>div>p{
+    margin-top: 20px;
+  }
+
 #items-card>div>img{
     width: 70%;
 }

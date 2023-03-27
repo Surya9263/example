@@ -12,7 +12,7 @@ let user=JSON.parse(localStorage.getItem("currentUser"))
 function catData(){
 
     if(user){
-        document.getElementById("user").innerText=user.name.toUpperCase()
+        document.getElementById("user").innerText=`${user.name.toUpperCase()}`
         document.getElementById("signup").hidden=true
         document.getElementById("login").innerText="LOGOUT"
         document.getElementById("login").addEventListener("click",function(){

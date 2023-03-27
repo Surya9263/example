@@ -15,7 +15,6 @@ function handleLogin(event){
         localStorage.setItem("currentUser",JSON.stringify(filtered[0]))
         window.location.href="./index.html"
     }
-
 }
 
 

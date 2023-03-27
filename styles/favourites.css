@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#navbar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    color: white;
+    padding: 15px 0px;
+    margin-bottom: 20px;
+}
+
+
+img{
+    width: 100px;
+}
+
+#favourites{
+    width: 50%;
+    margin: auto;
+}
+
+#favourites>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    margin-top: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+button{
+    padding: 10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    margin-top: 20px;
+}
+
+h3,h2{
+    text-align: center;
+}
+
+h3:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
