@@ -1,21 +1,75 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#navbar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    color: white;
+    padding: 15px 0px;
+    margin-bottom: 20px;
+}
+
+a{
+    color: white;
+}
+
+
+#recipe-card{
+    text-align: center;
+}
+
+button{
+
+    padding: 10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    margin: 20px 0px;
+}
+
 #recipe-card>div{
     display: grid;
-    justify-content: center ;
-    /* text-align: center                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ; */
+    justify-items: center;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; */
 }
 img{
-    height: 400px;
+    height: 300px;
+    border-radius: 10px;
+    margin-top: 30px;
 }
 
 table{
     width: 50%;
     margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 table,th,td{
     border: 1px solid;
 }
 
-button{
-    cursor: pointer;
+th{
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+p{
+    width: 50%;
+    line-height: 20px;
+}
+
+h3{
+    background-color: black;
+    color: white;
+    padding: 7px;
+    margin: 20px 0px;
+}
+
+h4,h2{
+    margin: 10px 0px;
 }

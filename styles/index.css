@@ -1,23 +1,60 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#navbar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    color: white;
+    padding: 15px 0px;
+    margin-bottom: 20px;
+}
+
+a{
+    color: white;
+}
+
 #category-card{
   display: grid;
   grid-template-columns: repeat(3,1fr); 
   gap: 10px; 
-  justify-content: center;
+  margin-top: 75px;
 }
 
 .catCard{
-    border: 1px solid;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: grid;
+    justify-items: center;
+    padding: 10px;
+}
+
+button{
+    padding: 10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
 }
 
 
 #searchBox{
     width: 50%;
     margin: auto;
+    margin-bottom: 50px;
 }
 
 #searchBox>input{
     padding: 15px 25px;
     width: 62%;
+}
+
+#searched-items{
+    height: 500px;
+    border: 1px solid;
+    overflow-y: scroll;
 }
 
 #searched-items>div{
@@ -26,6 +63,7 @@
     align-items: center;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     width: 70%;
+    margin-top: 10px;
 }
 
 #searched-items>div>img{

@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="./styles/index.css" />
   </head>
   <body onload="showCategories()">
+    <div id="navbar">
+      <a id="home" href="./index.html">HOME</a>
+      <a id="login" href="./login.html">LOGIN</a>
+      <a id="signup" href="./signup.html">SIGNUP</a>
+      <a id="user">USER</a>
+    </div>
     <div id="searchBox">
       <input oninput="debounce(getMealByQuery,500)"  id="search"  type="text" placeholder="search your meal here...">
       <div id="searched-items"></div>

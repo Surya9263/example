@@ -6,8 +6,20 @@ async function getRecipeById(){
     return data
 }
 
+let user=JSON.parse(localStorage.getItem("currentUser"))
+
 
 function recipeData(){
+
+    if(user){
+        document.getElementById("user").innerText=user.name.toUpperCase()
+        document.getElementById("signup").hidden=true
+        document.getElementById("login").innerText="LOGOUT"
+        document.getElementById("login").addEventListener("click",function(){
+            localStorage.removeItem("currentUser")
+        })
+    }
+
     getRecipeById()
     .then(res=>{
         console.log(res.meals);
@@ -27,10 +39,10 @@ function recipeData(){
             origin.innerText=`Origin: ${e.strArea}`
 
             let p2=document.createElement("p")
-            p2.innerText=`Instructions: ${e.strInstructions}`
+            p2.innerText=`${e.strInstructions}`
 
-            let ingr=document.createElement("h3")
-            ingr.innerText="Ingredients"
+            let instr=document.createElement("h3")
+            instr.innerText="Instructions"
 
             let table=document.createElement("table")
             let thead=document.createElement("thead")
@@ -58,7 +70,7 @@ function recipeData(){
             }
             table.append(thead)
             table.append(tbody)
-            div.append(img,h2,h4,origin,p2,table)
+            div.append(img,h2,h4,origin,table,instr,p2)
             document.getElementById("recipe-card").append(div)
         })
     })

@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles/selectedCategories.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="./styles/login.css">
 </head>
-<body onload="catData()">
+<body>
     <div id="navbar">
         <a id="home" href="./index.html">HOME</a>
         <a id="login" href="./login.html">LOGIN</a>
         <a id="signup" href="./signup.html">SIGNUP</a>
         <a id="user">USER</a>
       </div>
-    <div id="items-card"> 
+    <div>
+        <h1>Login Here...</h1>
+        <form>
+            <input required id="email" type="text" placeholder="email address">
+            <br>
+            <input required id="pass" type="password" placeholder="password">
+            <br>
+            <input type="submit" value="LOGIN">
+        </form>
     </div>
 </body>
 </html>
-<script src="./scripts/selectedCategory.js"></script>
+<script src="./scripts/login.js"></script>

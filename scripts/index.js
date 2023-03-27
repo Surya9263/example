@@ -1,3 +1,7 @@
+
+let user=JSON.parse(localStorage.getItem("currentUser"))
+console.log(user);
+
 async function getCategories(){
     const res=await fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
     const data=await res.json()
@@ -5,6 +9,21 @@ async function getCategories(){
 }
 
 function showCategories(){
+
+    if(user){
+        document.getElementById("user").innerText=user.name.toUpperCase()
+        document.getElementById("signup").hidden=true
+        document.getElementById("login").innerText="LOGOUT"
+        document.getElementById("login").addEventListener("click",function(){
+            localStorage.removeItem("currentUser")
+        })
+    }
+
+    document.getElementById("searched-items").style.height="0px"
+    document.getElementById("searched-items").style.border="none"
+
+    handleNavbar()
+
     getCategories()
     .then(res=>{
         console.log(res.categories);
@@ -19,26 +38,33 @@ function showCategories(){
             p.innerText=e.strCategoryDescription
             let btn=document.createElement("button")
             btn.innerText="See More >"
-            btn.style.padding="10px 25px"
             btn.addEventListener("click",function(){
                 window.location.href=`./selectedCategory.html?cat=${e.strCategory}`
             })
-
-            div.append(h3,img,p,btn)
+            div.append(h3,img,btn)
             document.getElementById("category-card").append(div)
         })
     })
 }
 
 
+function handleNavbar(){
+    let navbar=document.querySelector("#navbar").innerHTML[1]
+    console.log(navbar);
+}
+
 async function getMealByQuery(){
     let query=document.getElementById("search").value
-    console.log(query);
+    console.log("query",query);
     const res=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
     const data=await res.json()
     console.log(data.meals);
     
+    document.getElementById("searched-items").style.height="500px"
+
     if(!query){
+        console.log("in");
+        document.getElementById("searched-items").style.height="0px"
         document.getElementById("searched-items").innerHTML=null
         return
     }
@@ -60,12 +86,9 @@ async function getMealByQuery(){
     })
 }
 
-
-
 let id;
 
-function debounce(func,delay){
-    
+function debounce(func,delay){    
     if(id){
         clearTimeout(id)
     }

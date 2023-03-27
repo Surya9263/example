@@ -6,7 +6,20 @@ async function getDataByCategory(){
     return data
 }
 
+
+let user=JSON.parse(localStorage.getItem("currentUser"))
+
 function catData(){
+
+    if(user){
+        document.getElementById("user").innerText=user.name.toUpperCase()
+        document.getElementById("signup").hidden=true
+        document.getElementById("login").innerText="LOGOUT"
+        document.getElementById("login").addEventListener("click",function(){
+            localStorage.removeItem("currentUser")
+        })
+    }
+
     getDataByCategory()
     .then(res=>{
         console.log(res.meals)
@@ -20,7 +33,12 @@ function catData(){
             btn.innerText="See Recipe"
             btn.style.padding="10px 25px"
             btn.addEventListener("click",function(){
-                window.location.href=`./recipe.html?id=${e.idMeal}`
+                console.log(user);
+                if(!user){
+                    window.location.href="./login.html"
+                }else{
+                   window.location.href=`./recipe.html?id=${e.idMeal}`
+                }
             })
             div.append(img,p,btn)
             document.getElementById("items-card").append(div)
