@@ -100,7 +100,3 @@ function recipeData() {
   });
 }
 
-// function addFavourite(){
-//     let filtered=users.filter((e)=>e.email==currentUser.email)
-
-// }
